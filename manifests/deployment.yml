@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "tamirautoinstrum-30a9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "tamirautoinstrum-30a9"
+  template:
+    metadata:
+      labels:
+        app: "tamirautoinstrum-30a9"
+    spec:
+      containers:
+        - name: "tamirautoinstrum-30a9"
+          image: "k8sevents.azurecr.io/tamirautoinstrum"
+          ports:
+          - containerPort: 80
